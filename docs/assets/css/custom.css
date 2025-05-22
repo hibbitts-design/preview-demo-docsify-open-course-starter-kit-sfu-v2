@@ -23,7 +23,7 @@ body .markdown-section {
     --link-color: #CC0633!important;
     --link-color-hover: var(--link-color);
     --link-underline-color: #CC0633!important;
-    --link-underline-thickness: 1px;
+    --link-underline-thickness: auto;
     --link-underline-thickness-hover: var(--link-underline-thickness);
 
     --blockquote-border-color: #757B7F!important;
@@ -40,7 +40,7 @@ body .markdown-section {
     --link-color: #EA7688!important;
     --link-color-hover: var(--link-color);
     --link-underline-color: #EA7688!important;
-    --link-underline-thickness: 1px;
+    --link-underline-thickness: auto;
     --link-underline-thickness-hover: var(--link-underline-thickness);
 
     --blockquote-border-color: #757B7F!important;
@@ -68,7 +68,7 @@ body .markdown-section {
     --link-underline-color: #0F6CBF!important;
     --link-underline-thickness: 0px!important;
     --link-underline-color-hover: #0F6CBF;
-    --link-underline-thickness-hover: 1px!important;
+    --link-underline-thickness-hover: auto!important;
 
     --blockquote-border-color: #0F6CBF!important;
 
@@ -96,7 +96,7 @@ body .markdown-section {
     --link-underline-color: #0B1660!important;
     --link-underline-thickness: 0px!important;
     --link-underline-color-hover: #0B1660;
-    --link-underline-thickness-hover: 1px!important;
+    --link-underline-thickness-hover: auto!important;
 
     --blockquote-border-color: #0B1660!important;
 

@@ -48,6 +48,30 @@
   src: url('../fonts/source-sans-3-v15-latin/source-sans-3-v15-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/* Fix for Coverpage title link colors with preview build of Docsify v5 theme */
+.cover h1 a {
+  color: var(--cover-title-color);
+}
+.cover h1 a .hover {
+  color: var(--link-color) !important;
+}
+
+/* Fix for Transparent iframe support for both light and dark modes with preview build of Docsify v5 theme */
+iframe,
+iframe *,
+iframe[src],
+iframe[src] * {
+    color-scheme: light dark !important;
+}
+@media (prefers-color-scheme: dark) {
+    iframe,
+    iframe *,
+    iframe[src],
+    iframe[src] * {
+        color-scheme: light !important;
+    }
+}
+
 body {
   display: flex;
   flex-wrap: wrap; 
@@ -79,6 +103,7 @@ body {
   font-size: 1.4em!important;
 }
 
+/* for Docsify-This and Starter Kits Font Awesome plugin Header content compatibility with Docsify v5 */
 .markdown-section:has(.fas) h1,
 .markdown-section:has(.fab) h1,
 .markdown-section:has(.svg-inline--fa) h1,
@@ -98,7 +123,6 @@ body {
 .markdown-section:has(.fab) h6,
 .markdown-section:has(.svg-inline--fa) h6 {
   display: flex;
-  /* for Docsify-This and Starter Kits Font Awesome plugin Header content compatibility with Docsify v5 */
   gap: 0.15em;
 }
 
@@ -300,9 +324,9 @@ body {
 .markdown-section a[href$="?id=z"] {
   display: inline-flex;
   padding-top: 0px;
-  padding-right: 6px;
+  padding-right: 4px;
   padding-bottom: 0px;
-  padding-left: 6px;
+  padding-left: 4px;
   line-height: 1.2em;
 }
 
@@ -381,11 +405,6 @@ body {
 }
 
 .markdown-section pre {
-  white-space: pre-wrap !important;
-  overflow-wrap: break-word;
-}
-
-.markdown-section pre code {
   white-space: pre-wrap !important;
   overflow-wrap: break-word;
 }
@@ -585,11 +604,11 @@ body {
 }
 
 .markdown-section .column img {
-  padding-top: 0.35rem;
+  margin-top: 0.35rem;
 }
 
 .markdown-section .column-right img {
-  padding-top: 0.35rem;
+  margin-top: 0.35rem;
 }
 
 .markdown-section .reverse-columns .column {

@@ -4,18 +4,20 @@
 ### XX/XX/2025
 
 **New:**
-* Docsify v5 used for all Markdown file rendering
-* Skip-link to content button, accessible via tab key (via Docsify v5)
+* Built with the modernized and refactored Docsify v5 platform
+* Adoption of Docsify v5's new theme system for enhanced customization and a modern user interface
+* Use of Marked.js v15+ (from Docsify v5) for markdown rendering, providing improved compatibility and rendering capabilities
 
 **Improved:**
 * Overall refined visual layout of various Markdown elements
-* Aria attributes for Sidebar toggle button and current page link (via Docsify v5)
-* Assigning proper roles and aria attributes to various site elements (via Docsify v5)
-* Support for keyboard shortcuts, e.g. \ for hide or show Sidebar (via Docsify v5)
+* Skip-link to content button, accessible via tab key (now via Docsify v5)
+* Aria attributes for Sidebar toggle button and current page link (now via Docsify v5)
+* Assigning proper roles and aria attributes to various site elements (now via Docsify v5)
+* Support for keyboard shortcuts, e.g. \ for hide or show Sidebar (now via Docsify v5)
+* Focus on hidden Sidebar items is prevented (now via Docsify v5)
+* Top navbar can now accept focus (now via Docsify v5)
 * Keyboard scrolling is supported within code blocks (via Docsify v5)
-* Focus on hidden Sidebar items is prevented (via Docsify v5)
-* Top navbar can now accept focus (via Docsify v5)
-* Improved search results, which exclude Markdown formating syntax (via Docsify v5)
+* Improved search results, which exclude Markdown formatting syntax (via Docsify v5)
 
 **Bugfix:**
 * Handle use of Coverpage title link with duplicate id
@@ -25,13 +27,23 @@
 
 # Changelog
 
-## [v1.2.21](https://github.com/hibbitts-design/docsify-open-course-starter-kit/releases/tag/v1.2.21)
-### XX/XX/2025
+## [v1.3.0](https://github.com/hibbitts-design/docsify-open-course-starter-kit/releases/tag/v1.3.0)
+### 03/04/2025
+
+**New:**
+* Support for image grid plugin, including customizations (with thanks and appreciation to @gllmAR)
+* Include zoom image plugin (not enabled by default)
+* Use of Docsify and Docsify Themeable preview build assets for access to upcoming Docsify accessibility enhancements authored by @jhildenbiddle (with thanks and appreciation to John and tested extensively in Docsify-This)
 
 **Improved:**
 * Updated ReadMe
 * Updated example custom CSS for Moodle LMS
+* Updated to latest stable Docsify 4.x preview build (including Marked 4.2.12)
 * Support horizontal scrolling in code blocks
+* Adjusted bottom margin for summary elements
+* Match Docsify-This CSS with Docsify Starter Kits CSS
+* Browser-level image lazy loading via plugin 'docsify-loading' no longer enabled by default to match updated Docsify-This behaviour
+* Default search plugin settings adjusted to match Docsify-This
 
 ## [v1.2.20](https://github.com/hibbitts-design/docsify-open-course-starter-kit/releases/tag/v1.2.20)
 ### 12/03/2024
