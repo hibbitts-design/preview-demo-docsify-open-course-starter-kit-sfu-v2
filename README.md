@@ -5,11 +5,14 @@
 
 [![Docsify](https://img.shields.io/npm/v/docsify?label=docsify)](https://docsify.js.org/)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/hibbitts-design/docsify-open-course-starter-kit/blob/main/LICENSE)
+
 <a href="https://discord.gg/zT8eS8ZG">
     <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Docsify Discord Chat" />
 </a>
 
 > This is a starter kit to quickly create a Markdown-based open course site with the site generator [Docsify](https://docsify.js.org) (v5 Preview). Global navigation elements can be hidden for seamlessly embedding pages (i.e., into an LMS). Includes an optional "Edit this Page" link.
+
+Docsify sites use client-side rendering, which means your content will not be indexed by search engines like Google, Bing, or DuckDuckGo.
 
 📸 Docsify Open Course Screenshots
 ---
@@ -252,6 +255,36 @@ function test() {
 </div>
 ```
 
+`announcement`  
+When the Docsify v5 theme is enabled, to style Blockquotes similarly to the default Docsify-This style.  
+
+```html
+<blockquote class="announcement">
+  <h2>What’s Happening This Week</h2>
+  <h3>How to explore the problem space?</h3>
+  <h4>Important Reminders</h4>
+  <ul>
+    <li><a href="#">Journey Map</a> assignment <span class='badge'> Tue Jun 12th 11:59pm PDT</span></li>
+    <li><a href="#">Course Reflection Log</a> assignment <span class='badge'> Fri Aug 3rd 11:59pm PDT</span></li>
+  </ul>
+
+  <h4>Required Reading</h4>
+  <ul>
+    <li>
+      <a href="https://www.smashingmagazine.com/2014/10/the-skeptics-guide-to-low-fidelity-prototyping/">
+        The Skeptic’s Guide To Low-Fidelity Prototyping
+      </a>
+    </li>
+  </ul>
+
+  <p>
+    <a href="https://canvas.sfu.ca/courses/44038/quizzes/166553" class="button primary">
+      Required Reading Quiz due Jun 4th
+    </a>
+  </p>
+</blockquote>
+```
+
 `badge`  
 
 ```html
@@ -306,6 +339,61 @@ function test() {
 [Required Reading Quiz due Jun 4th](https://canvas.sfu.ca/courses/44038/quizzes/166553 ':class=button-rounded-secondary')
 ```
 
+`card`
+
+```html
+<div class="card">
+
+  ## [Card Title](#)
+  ![Card Image](images/example.jpg)
+  Card content goes here.
+
+</div>
+```
+
+`card-list`
+
+```html
+<div class="card-list">
+ <div class="card">
+
+ ## [Blog Post Title Link](#)
+ ![Blog Post Image](images/mountain.jpg)
+
+ Blog post preview text goes here with more details about the content.  
+
+ Jan 1, 1970. 
+
+ [Read More](# ":class=navpill")
+
+ </div>
+ <div class="card">
+
+ ## [Another Blog Post](#)
+ ![Blog Post Image](images/forest.jpg)
+
+ Another blog post preview with different content.  
+
+ Jan 1, 1970. 
+
+ [Read More](# ":class=navpill")
+    
+ </div>
+</div>
+```
+
+`card-rounded`
+
+```html
+<div class="card-rounded">
+
+  ## [Card Title](#)
+  ![Card Image](images/example.jpg)
+  Card content goes here.
+
+</div>
+```
+
 `embedly-card` (for linked article previews, embedded slides/videos, etc.)  
 
 ```markdown
@@ -327,7 +415,29 @@ function test() {
 `header-image-full-width` (suggested size of 1200px to 2000px width and 400px to 600px height, and display of Table of Contents is not available)  
 
 ```markdown
-![Photo of Mountain](images/mountain.jpg ':class=header-image')
+![Photo of Mountain](images/mountain.jpg ':class=header-image-full-width')
+```
+
+`header-tall-image-full-width` (suggested size of 1200px to 2000px width and 400px to 600px height, and display of Table of Contents is not available)  
+
+```markdown
+![Photo of Mountain](images/mountain.jpg ':class=header-tall-image-full-width')
+```
+
+`header-image-full-width-headings-overlay` (Suggested size of 1200px to 2000px width and 400px to 600px height, and display of Table of Contents is not available)
+
+```markdown
+![Photo of Mountain](images/mountain.jpg ":class=header-image-full-width-headings-overlay")
+
+# Page Title
+```
+
+`header-tall-image-full-width-headings-overlay` (Suggested size of 1200px to 2000px width and 400px to 600px height, and display of Table of Contents is not available)
+
+```markdown
+![Photo of Mountain](images/mountain.jpg ":class=header-tall-image-full-width-headings-overlay")
+
+# Page Title
 ```
 
 `image-75` (scale image to 75%)

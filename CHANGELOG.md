@@ -9,6 +9,7 @@
 * Use of Marked.js v15+ (from Docsify v5) for markdown rendering, providing improved compatibility and rendering capabilities
 
 **Improved:**
+* Updated ReadMe
 * Overall refined visual layout of various Markdown elements
 * Skip-link to content button, accessible via tab key (now via Docsify v5)
 * Aria attributes for Sidebar toggle button and current page link (now via Docsify v5)
@@ -18,14 +19,37 @@
 * Top navbar can now accept focus (now via Docsify v5)
 * Keyboard scrolling is supported within code blocks (via Docsify v5)
 * Improved search results, which exclude Markdown formatting syntax (via Docsify v5)
+* Added variable for applying Docsify v5 core theme defaults
 
 **Bugfix:**
 * Handle use of Coverpage title link with duplicate id
+* Fixed Font Awesome plugin regex to only match :fa- prefixed patterns
 
 **Breaking:**
 * With the use of Docsify v5 Legacy Browsers (for example, Internet Explorer 11) are no longer supported
 
 # Changelog
+
+## [v1.3.4](https://github.com/hibbitts-design/docsify-open-course-starter-kit/releases/tag/v1.3.4)
+### XX/XX/2025
+
+**New:**
+* Added CSS Markdown classes to support cards (`card` & `card-rounded`) and responsive card lists (`card-list`)
+* Added CSS Markdown classes to support header overlays on full-width images (`header-image-full-width-headings-overlay` and `header-tall-image-full-width-headings-overlay`)
+* Added support for topic index using standard links in first paragraph
+
+**Improved:**
+* Updated ReadMe
+* Improve visual design of h1 and h2 below top full width image (use HTML tags to keep default styling)
+
+**Bugfix:**
+* Minor CSS fixes
+
+## [v1.3.3](https://github.com/hibbitts-design/docsify-open-course-starter-kit/releases/tag/v1.3.3)
+### 07/02/2025
+
+**Improved:**
+* Updated to use latest docsify-footnotes plugin (v2.2.1)
 
 ## [v1.3.2](https://github.com/hibbitts-design/docsify-open-course-starter-kit/releases/tag/v1.3.2)
 ### 04/09/2025
