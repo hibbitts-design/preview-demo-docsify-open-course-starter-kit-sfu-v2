@@ -1,34 +1,3 @@
-/* Fix for Coverpage title link colors with preview build of Docsify v5 theme */
-.cover h1 {
-  position: relative;
-  color: var(--cover-title-color);
-  font: var(--cover-title-font);
-
-  a {
-    color: var(--cover-title-color);
-  }
-}
-
-/* Fix for Transparent iframe support for both light and dark modes with preview build of Docsify v5 theme */
-@media (prefers-color-scheme: dark) {
-  iframe,
-  iframe *,
-  iframe[src],
-  iframe[src] * {
-    color-scheme: light !important;
-  }
-}
-
-/* Fix for inline codeblock contrast within shaded table rows with preview build of Docsify v5 theme */
-.markdown-section code {
-  background: var(--color-mono-2);
-}
-
-/* Patch for Font Awesome plugin Header content compatibility with Docsify v5 */
-[id]:is(.markdown-section :where(h1,h2,h3,h4,h5,h6)) a:first-of-type {
-  display: unset;
-}
-
 /* Patch for legacy use of Pre on mobile with preview build of Docsify v5 theme */
 .markdown-section pre {
   margin-top: 1rem;
@@ -184,6 +153,7 @@
 
 .markdown-section blockquote.announcement h2 {
   font-size: 1.35rem;
+  font-weight: 400;
   line-height: 1.7rem;
   margin-top: 0.5rem;
   margin-bottom: 0;
@@ -194,6 +164,7 @@
 
 .markdown-section blockquote.announcement h3 {
   font-size: 1.2rem;
+  font-weight: 400;
   line-height: 1.5rem;
   margin-top: 0.4rem;
   margin-bottom: 0;
@@ -203,6 +174,7 @@
 
 .markdown-section blockquote.announcement h4 {
   font-size: 1.15rem;
+  font-weight: 400;
   line-height: 1.3rem;
   margin-top: 0.3rem;
   margin-bottom: 0;
@@ -212,6 +184,7 @@
 
 .markdown-section blockquote.announcement h5 {
   font-size: 1.1rem;
+  font-weight: 400;
   line-height: 1.25rem;
   margin-top: 0.2rem;
   margin-bottom: 0;
@@ -221,6 +194,7 @@
 
 .markdown-section blockquote.announcement h6 {
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.1rem;
   margin-top: 0.1rem;
   margin-bottom: 0;
@@ -349,6 +323,37 @@
   height: auto;
 }
 
+aside#__sidebar .card-image-sidebar,
+aside#__sidebar .card-image-sidebar-rounded {
+  width: 100%; /* fills full width of sidebar */
+  max-width: 240px; /* prevents it from getting too wide */
+  height: auto;
+  max-height: 175px; /* prevents it from getting too tall */
+  object-fit: cover; /* crops image to fit dimensions */
+  margin-right: 29px;
+  display: block;
+}
+
+aside#__sidebar .card-image-sidebar-rounded {
+  border-radius: 6px 6px 0 0;
+}
+
+/* Make sidebar a flex container when banner image exists */
+aside#__sidebar:has(.sidebar-nav > [class*="card-image-sidebar"]:first-child) {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Put sidebar-nav (with image) first */
+aside#__sidebar:has(.sidebar-nav > [class*="card-image-sidebar"]:first-child) .sidebar-nav {
+    order: 1;
+}
+
+/* Put app-nav-merged second */
+aside#__sidebar:has(.sidebar-nav > [class*="card-image-sidebar"]:first-child) .app-nav-merged {
+    order: 2;
+}
+
 .markdown-section .banner-image {
   width: 100%;
   height: 125px;
@@ -449,8 +454,8 @@
 
 .markdown-section p:has(.header-tall-image-full-width, .header-image-full-width) + h1[tabindex="-1"],
 .markdown-section p:has(.header-tall-image-full-width, .header-image-full-width) + * + h1[tabindex="-1"] {
-  font-size: clamp(2rem, 5vw, 3.0rem); /* Scales between 2rem and 3.0rem */
-  line-height: clamp(2.2rem, 5.5vw, 3.4rem);
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Scales between 2rem and 3.0rem */
+  line-height: clamp(1.7rem, 5.5vw, 2.9rem);
   margin-left: -3px;
   font-weight: 600;
   letter-spacing: clamp(-0.02em, -0.5vw, -0.01em); /* Tighten large text */
@@ -460,8 +465,8 @@
 
 .markdown-section p:has(.header-tall-image-full-width, .header-image-full-width) + h1[tabindex="-1"] + h2[tabindex="-1"],
 .markdown-section p:has(.header-tall-image-full-width, .header-image-full-width) + * + h1[tabindex="-1"] + h2[tabindex="-1"] {
-  font-size: clamp(1.2rem, 3vw, 1.8rem); /* Scales between 1.2rem and 1.8rem */
-  line-height: clamp(1.4rem, 3.5vw, 2rem);
+  font-size: clamp(1.2rem, 3vw, 1.7rem); /* Scales between 1.2rem and 1.7rem */
+  line-height: clamp(1.4rem, 3.5vw, 1.9rem);
   margin-left: -2px;
   font-weight: 500;
   margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
@@ -641,7 +646,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .markdown-section .card:not(.card-list .card),
@@ -667,6 +672,7 @@
   margin: 0 0 .1rem 0;
   padding-bottom: .5rem;
   font-size: 1.3rem;
+  border-style: none;
 }
 
 /* Adjust space above and below h2 that follows edge-to-edge images */
@@ -753,5 +759,43 @@
   .markdown-section blockquote.announcement h6 {
     font-size: 1rem;
     line-height: 1.15rem;
+  }
+}
+
+@media print {
+  /* Hide UI elements */
+  .cover,
+  .app-nav,
+  #__sidebar,
+  .sidebar,
+  aside,
+  nav,
+  .pagination-item,
+  .docsify-pagination-container,
+  .pagination {
+    display: none !important;
+  }
+
+  /* Reset layout for full width */
+  body,
+  main,
+  .content,
+  .markdown-section {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    transform: none !important;
+    position: static !important;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 2cm;
+  }
+
+  /* Prevent bad page breaks */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
   }
 }
